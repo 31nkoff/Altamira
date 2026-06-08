@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Altamira | Jardín de Eventos en San Juan del Río</title>
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* --- ESTILOS GENERALES --- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
         }
 
         body {
@@ -65,7 +67,6 @@
             color: white;
         }
 
-        /* --- HEADER & NAV --- */
         header {
             background-color: rgba(255, 255, 255, 0.95);
             position: fixed;
@@ -113,7 +114,6 @@
             color: #bd9b60;
         }
 
-        /* --- SLIDER DE INICIO ANIMADO (KEN BURNS EFFECT) --- */
         .hero-slider {
             position: relative;
             width: 100%;
@@ -136,7 +136,6 @@
             animation: kenBurnsSlider 24s infinite;
         }
 
-        /* Imágenes elegantes de entorno de jardín y eventos alternándose */
         .slide:nth-child(1) {
             background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)), url('https://images.unsplash.com/photo-1545232979-8bf34eb9757b?q=80&w=1920');
             animation-delay: 0s;
@@ -187,7 +186,6 @@
             text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
         }
 
-        /* --- ACERCA DE --- */
         .about-section {
             text-align: center;
         }
@@ -212,7 +210,6 @@
             font-size: 1.15rem;
         }
 
-        /* --- SERVICIOS --- */
         .services {
             background-color: #f4efe6;
         }
@@ -266,7 +263,6 @@
             margin-top: 15px;
         }
 
-        /* --- INFORMACIÓN DE CONTACTO Y MAPA --- */
         .info-contact {
             display: flex;
             flex-wrap: wrap;
@@ -294,7 +290,6 @@
             color: #2c4a3e;
             display: block;
             margin-bottom: 5px;
-            font-size: 1.1rem;
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.4rem;
         }
@@ -312,7 +307,6 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
 
-        /* --- FOOTER --- */
         footer {
             background-color: #2c4a3e;
             color: #f4efe6;
@@ -321,7 +315,6 @@
             font-size: 0.9rem;
         }
 
-        /* --- RESPONSIVO --- */
         @media (max-width: 768px) {
             .hero-content h1 { font-size: 2.8rem; }
             .hero-content p { font-size: 1rem; }
@@ -334,7 +327,6 @@
 </head>
 <body>
 
-    <!-- Encabezado / Navegación -->
     <header>
         <div class="nav-container">
             <div class="logo">ALTAMIRA</div>
@@ -349,7 +341,6 @@
         </div>
     </header>
 
-    <!-- Sección de Inicio con Slider de Movimiento Lento -->
     <section id="inicio" class="hero-slider">
         <div class="slide"></div>
         <div class="slide"></div>
@@ -364,14 +355,12 @@
         </div>
     </section>
 
-    <!-- Sección Nosotros -->
     <section id="nosotros" class="container about-section">
         <div class="rating">★ 4.7 basado en 79 Opiniones</div>
         <h2>Un espacio exclusivo y natural</h2>
         <p>En Altamira nos apasiona ser el marco de tus grandes celebraciones. Nuestro recinto combina una vegetación radiante y entornos perfectamente cuidados con la comodidad técnica e infraestructura que requieres. Diseñado con distinción para bodas, quince años y eventos que merecen recordarse toda la vida.</p>
     </section>
 
-    <!-- Sección Servicios / Eventos -->
     <section id="servicios" class="services">
         <div class="container">
             <h2>Celebraciones Inolvidables</h2>
@@ -392,7 +381,6 @@
         </div>
     </section>
 
-    <!-- Sección Ubicación e Información -->
     <section id="ubicacion" class="container">
         <div class="info-contact">
             <div class="info-text">
@@ -422,7 +410,6 @@
                 <a href="https://maps.google.com/?q=El+Rosal+15,+Nuevo+Espiritu+Santo,+76821+San+Juan+del+Río,+Qro." target="_blank" class="btn">Ver en Google Maps</a>
             </div>
             
-            <!-- Mapa interactivo oficial de Google Maps de la ubicación exacta -->
             <div class="map-container">
                 <iframe 
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3743.518388439162!2d-99.98808622415177!3d20.392576981102434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d30b968a3556bf%3A0x7d0180bbf231bbda!2sEl%20Rosal%2015%2C%20Nuevo%20Espiritu%20Santo%2C%2076821%20San%20Juan%20del%20R%C3%ADo%2C%20Qro.!5e0!3m2!1ses-419!2smx!4v1710000000000!5m2!1ses-419!2smx" 
@@ -437,11 +424,24 @@
         </div>
     </section>
 
-    <!-- Pie de página -->
     <footer>
         <p>&copy; 2026 Altamira Jardín de Eventos. Todos los derechos reservados.</p>
         <p style="font-size: 0.8rem; margin-top: 5px; color: #8fa399;">San Juan del Río, Querétaro, México.</p>
     </footer>
 
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'F12' || 
+                (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j' || e.key === 'C' || e.key === 'c')) || 
+                (e.ctrlKey && (e.key === 'U' || e.key === 'u'))) {
+                e.preventDefault();
+                return false;
+            }
+        });
+    </script>
 </body>
 </html>
